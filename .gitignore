@@ -33,3 +33,5 @@ output/*.pdf
 # OS
 .DS_Store
 Thumbs.db
+
+# Note: examples/ directory IS tracked (not ignored) to provide sample outputs for reviewers

@@ -18,7 +18,11 @@ from pipeline.output_generator import (
     generate_pdf
 )
 from pipeline.visualization import generate_visualization_report
-from pipeline.schemas import validate_source_abstraction
+from pipeline.schemas import (
+    validate_source_abstraction,
+    validate_world_definition,
+    validate_character_transformation
+)
 
 console = Console()
 
@@ -124,6 +128,13 @@ class NarrativeTransformer:
                     target_setting,
                     source_analysis.get('core_themes', [])
                 )
+                
+                # Validate Stage 2 output
+                valid, world, error = validate_world_definition(world)
+                if not valid:
+                    console.print(f"  [red]✗ Stage 2 validation failed: {error}[/red]")
+                    raise ValueError(f"Stage 2 validation failed: {error}")
+                
                 self.artifacts['world'] = world
                 
                 progress.update(task, description="[green]✓ Stage 2: World definition complete")
@@ -141,6 +152,13 @@ class NarrativeTransformer:
                     source_analysis.get('character_archetypes', []),
                     world
                 )
+                
+                # Validate Stage 3 output
+                valid, characters, error = validate_character_transformation(characters)
+                if not valid:
+                    console.print(f"  [red]✗ Stage 3 validation failed: {error}[/red]")
+                    raise ValueError(f"Stage 3 validation failed: {error}")
+                
                 self.artifacts['characters'] = characters
                 
                 char_mapping = create_character_mapping_table(
@@ -179,6 +197,12 @@ class NarrativeTransformer:
             if start_stage <= 5:
                 task = progress.add_task("[cyan]Stage 5: Checking consistency...", total=None)
                 
+                MAX_FIX_RETRIES = 2
+                retry_count = 0
+                needs_manual_review = False
+                unresolved_issues = []
+                
+                # Initial consistency check
                 consistency = check_consistency(
                     source_analysis,
                     world,
@@ -189,13 +213,43 @@ class NarrativeTransformer:
                 score_info = calculate_overall_score(consistency)
                 consistency['overall_score'] = score_info
                 
-                plot, characters, fixes = apply_fixes(consistency, plot, characters)
+                # Re-validation loop: apply fixes and re-check
+                while consistency.get('required_fixes') and retry_count < MAX_FIX_RETRIES:
+                    retry_count += 1
+                    console.print(f"  [yellow]→ Applying fixes (attempt {retry_count}/{MAX_FIX_RETRIES})...[/yellow]")
+                    
+                    plot, characters, fixes = apply_fixes(consistency, plot, characters)
+                    
+                    # Re-run consistency check after fixes
+                    consistency = check_consistency(
+                        source_analysis,
+                        world,
+                        characters,
+                        plot
+                    )
+                    score_info = calculate_overall_score(consistency)
+                    consistency['overall_score'] = score_info
+                
+                # Check if issues remain after max retries
+                if consistency.get('required_fixes'):
+                    needs_manual_review = True
+                    unresolved_issues = consistency.get('required_fixes', [])
+                    console.print(f"  [red]⚠ Unresolved issues after {MAX_FIX_RETRIES} fix attempts[/red]")
+                    consistency['manual_review'] = {
+                        "status": "needs_manual_review",
+                        "unresolved_issues": unresolved_issues,
+                        "fix_attempts": retry_count
+                    }
                 
                 self.artifacts['consistency'] = consistency
+                self.artifacts['plot'] = plot
+                self.artifacts['characters'] = characters
                 
                 progress.update(task, description="[green]✓ Stage 5: Consistency check complete")
                 console.print(f"  → Overall score: {score_info['overall_score']}/10")
                 console.print(f"  → Passed: {score_info['passed']}")
+                if needs_manual_review:
+                    console.print(f"  → [yellow]Manual review required for {len(unresolved_issues)} issue(s)[/yellow]")
                 self._save_checkpoint(5, source_name, target_setting)
             else:
                 consistency = self.artifacts.get('consistency', {})
