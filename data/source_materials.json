@@ -1,0 +1,192 @@
+{
+    "romeo_and_juliet": {
+        "title": "Romeo and Juliet",
+        "author": "William Shakespeare",
+        "year": "1597",
+        "type": "play",
+        "public_domain": true,
+        "summary": "Two young lovers from feuding families in Verona fall deeply in love at first sight. Their families, the Montagues and Capulets, have been locked in a bitter rivalry for generations. Romeo, a Montague, secretly marries Juliet, a Capulet, with the help of Friar Lawrence. When Romeo kills Juliet's cousin Tybalt in a fight, he is banished. A plan to reunite the lovers goes wrong when Romeo believes Juliet is dead (she has taken a sleeping potion). He poisons himself at her tomb, and when Juliet awakens to find Romeo dead, she kills herself. Their deaths finally end the family feud.",
+        "characters": [
+            "Romeo Montague",
+            "Juliet Capulet",
+            "Friar Lawrence",
+            "Tybalt",
+            "Mercutio",
+            "Lord Capulet",
+            "Lady Capulet",
+            "Lord Montague",
+            "Lady Montague",
+            "The Nurse",
+            "Paris",
+            "Benvolio"
+        ],
+        "themes": [
+            "Forbidden love",
+            "Family loyalty vs. personal desire",
+            "Fate and destiny",
+            "Youth vs. age",
+            "Violence and its consequences",
+            "The power of passion"
+        ],
+        "setting": "Verona, Italy, Renaissance era"
+    },
+    "hamlet": {
+        "title": "Hamlet",
+        "author": "William Shakespeare",
+        "year": "1600",
+        "type": "play",
+        "public_domain": true,
+        "summary": "Prince Hamlet of Denmark is visited by his father's ghost, who reveals he was murdered by Hamlet's uncle Claudius, who has since married Hamlet's mother and taken the throne. Hamlet feigns madness while plotting revenge, causing collateral damage to those around him including his love interest Ophelia. His hesitation and philosophical nature delay action until a final bloody confrontation where nearly everyone dies, including Hamlet himself.",
+        "characters": [
+            "Hamlet",
+            "Claudius",
+            "Gertrude",
+            "Ophelia",
+            "Polonius",
+            "Laertes",
+            "Horatio",
+            "The Ghost"
+        ],
+        "themes": [
+            "Revenge and justice",
+            "Corruption and moral decay",
+            "Appearance vs. reality",
+            "Madness",
+            "Mortality and death",
+            "Indecision"
+        ],
+        "setting": "Elsinore Castle, Denmark, Medieval era"
+    },
+    "odyssey": {
+        "title": "The Odyssey",
+        "author": "Homer",
+        "year": "8th century BCE",
+        "type": "epic poem",
+        "public_domain": true,
+        "summary": "After the Trojan War, Greek hero Odysseus spends ten years trying to return home to Ithaca and his wife Penelope. He faces numerous obstacles including the Cyclops Polyphemus, the enchantress Circe, the deadly Sirens, and the wrath of Poseidon. Meanwhile, suitors invade his home trying to marry Penelope and claim his kingdom. Odysseus finally returns disguised as a beggar, proves his identity, and reclaims his family and throne.",
+        "characters": [
+            "Odysseus",
+            "Penelope",
+            "Telemachus",
+            "Athena",
+            "Poseidon",
+            "Circe",
+            "Polyphemus",
+            "Calypso",
+            "The Suitors"
+        ],
+        "themes": [
+            "Homecoming and belonging",
+            "Perseverance",
+            "Cunning over strength",
+            "Loyalty and fidelity",
+            "The hero's journey",
+            "Temptation"
+        ],
+        "setting": "Mediterranean Sea and islands, Ancient Greece, Mythological era"
+    },
+    "dracula": {
+        "title": "Dracula",
+        "author": "Bram Stoker",
+        "year": "1897",
+        "type": "novel",
+        "public_domain": true,
+        "summary": "Jonathan Harker, an English solicitor, travels to Transylvania to help Count Dracula purchase property in England. He discovers Dracula is a vampire. Dracula travels to England and begins preying on Lucy Westenra and later Mina Murray. A group led by Professor Van Helsing pursues Dracula back to Transylvania and destroys him just as he reaches his castle.",
+        "characters": [
+            "Count Dracula",
+            "Jonathan Harker",
+            "Mina Murray",
+            "Lucy Westenra",
+            "Professor Van Helsing",
+            "Dr. Seward",
+            "Arthur Holmwood",
+            "Quincey Morris"
+        ],
+        "themes": [
+            "Good vs. evil",
+            "Sexuality and repression",
+            "Modernity vs. antiquity",
+            "Invasion and the foreign other",
+            "Science vs. superstition",
+            "Immortality and its costs"
+        ],
+        "setting": "Transylvania and England, Victorian era"
+    },
+    "frankenstein": {
+        "title": "Frankenstein",
+        "author": "Mary Shelley",
+        "year": "1818",
+        "type": "novel",
+        "public_domain": true,
+        "summary": "Victor Frankenstein, a young scientist, creates a sapient creature in an unorthodox experiment. Horrified by what he has made, Victor abandons the creature, who then seeks revenge for his painful existence. The creature kills Victor's loved ones one by one, leading to a chase across the Arctic where Victor dies and the creature vanishes into the ice.",
+        "characters": [
+            "Victor Frankenstein",
+            "The Creature",
+            "Elizabeth Lavenza",
+            "Henry Clerval",
+            "Robert Walton",
+            "Alphonse Frankenstein",
+            "William Frankenstein"
+        ],
+        "themes": [
+            "Creation and responsibility",
+            "The dangers of ambition",
+            "Nature vs. nurture",
+            "Isolation and loneliness",
+            "Playing God",
+            "Revenge"
+        ],
+        "setting": "Geneva, Ingolstadt, the Arctic, Early 19th century"
+    },
+    "cinderella": {
+        "title": "Cinderella",
+        "author": "Traditional (Perrault version)",
+        "year": "1697",
+        "type": "fairy tale",
+        "public_domain": true,
+        "summary": "A kind young woman is mistreated by her stepmother and stepsisters after her father's death. With magical help from her fairy godmother, she attends the royal ball and captures the prince's heart. She must flee at midnight, leaving behind a glass slipper. The prince searches the kingdom and finds her. They marry and live happily ever after.",
+        "characters": [
+            "Cinderella",
+            "The Prince",
+            "The Stepmother",
+            "The Stepsisters",
+            "The Fairy Godmother",
+            "The King"
+        ],
+        "themes": [
+            "Kindness rewarded",
+            "Transformation",
+            "Class mobility",
+            "Inner beauty",
+            "Perseverance through hardship",
+            "Magic and wish fulfillment"
+        ],
+        "setting": "A kingdom, Fairy tale era"
+    },
+    "macbeth": {
+        "title": "Macbeth",
+        "author": "William Shakespeare",
+        "year": "1606",
+        "type": "play",
+        "public_domain": true,
+        "summary": "Scottish general Macbeth receives a prophecy from three witches that he will become King of Scotland. Encouraged by his ambitious wife, he murders King Duncan and takes the throne. Paranoia and guilt lead to more murders. Lady Macbeth descends into madness and dies. Macbeth is killed by Macduff, and order is restored.",
+        "characters": [
+            "Macbeth",
+            "Lady Macbeth",
+            "Duncan",
+            "Banquo",
+            "Macduff",
+            "Malcolm",
+            "The Three Witches"
+        ],
+        "themes": [
+            "Ambition and its corrupting power",
+            "Fate vs. free will",
+            "Guilt and conscience",
+            "Appearance vs. reality",
+            "Masculinity and power",
+            "The supernatural"
+        ],
+        "setting": "Scotland, Medieval era"
+    }
+}
